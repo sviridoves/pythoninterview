@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Base</title>
+</head>
+<body>
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}" />
+{% block content %}
+    <table>
+        <tr>
+            <th>Название</th><th>Цена</th><th>Дата поступления</th><th>Единицы измерения</th><th>Поставщик</th>
+        </tr>
+        {% for object in object_list %}
+            <tr>
+                <td>{{ object.title }}</td><td>{{ object.price }}</td><td>{{ object.receipted_date }}</td><td>{{ object.measure }}</td><td>{{ object.vendor }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
+</body>
+</html>
