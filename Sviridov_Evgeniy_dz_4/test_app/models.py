@@ -1,5 +1,6 @@
 from django.db import models
 
+
 class Good_Item(models.Model):
     title = models.CharField(
         verbose_name=u'Название',
