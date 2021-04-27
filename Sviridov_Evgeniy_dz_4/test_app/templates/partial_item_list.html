@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>Items</title>
-</head>
-<body>
-{% extends "base.html" %}
-{% block content %}
-    <table>
+    <table id="test">
         <tr>
             <th>Название</th>
             <th>Цена</th>
@@ -15,7 +6,7 @@
             <th>Единицы измерения</th>
             <th>Поставщик</th>
         </tr>
-        {% for object in object_list %}
+        {% for object in items %}
             <tr>
                 <td>{{ object.title }}</td>
                 <td>{{ object.price }}</td>
@@ -25,9 +16,3 @@
             </tr>
         {% endfor %}
     </table>
-    <form action="{% url 'test_app:additem' %}" method="get">
-    <input type="submit" value="Add">
-    </form>
-{% endblock %}
-</body>
-</html>
