@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Items</title>
+</head>
+{% extends "base.html" %}
+{% load static %}
+{% block additional_js %}
+    <script src="{% static "js/js-add-item.js" %}" type="text/javascript"></script>
+{% endblock %}
+{% block content %}
+    <button type="button" class="js-add-item"%}">Add item</button>
+    <p></p>
+    {% include 'partial_item_list.html' %}
+
+    <div class="modal-fade" id="modal-good">
+        <div class="modal-dialog">
+            <div id="modal1" class="modal_div">
+                <span class="modal-close">X</span>
+                <form method="post" action="">
+                    {% csrf_token %}
+                    <table>
+                        {{ form.as_table }}
+                    </table>
+                    <input type="submit" value="Add item">
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

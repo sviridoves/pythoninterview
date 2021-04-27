@@ -1,0 +1,18 @@
+    <table id="test">
+        <tr>
+            <th>Название</th>
+            <th>Цена</th>
+            <th>Дата поступления</th>
+            <th>Единицы измерения</th>
+            <th>Поставщик</th>
+        </tr>
+        {% for object in items %}
+            <tr>
+                <td>{{ object.title }}</td>
+                <td>{{ object.price }}</td>
+                <td>{{ object.receipted_date }}</td>
+                <td>{{ object.measure }}</td>
+                <td>{{ object.vendor }}</td>
+            </tr>
+        {% endfor %}
+    </table>
